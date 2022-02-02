@@ -38,7 +38,7 @@ namespace Schachbulle\ContaoForumbBundle\ContentElements;
  * @author     Andreas Koob 
  * @package    Controller
  */
-class forum_forum_list extends Module
+class forum_forum_list extends \Module
 {
 
 	/**

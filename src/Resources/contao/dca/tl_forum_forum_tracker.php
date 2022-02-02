@@ -8,6 +8,9 @@ $GLOBALS['TL_DCA']['tl_forum_forum_tracker'] = array
 	(
 		'dataContainer'               => 'Table',
 		'enableVersioning'            => true,
+		'sql' => array
+		(
+		)
 	),
 	
 	// Fields

@@ -38,7 +38,7 @@ namespace Schachbulle\ContaoForumbBundle\ContentElements;
  * @author     Andreas Koob 
  * @package    Controller
  */
-class forum_common_functions extends frontend
+class forum_common_functions extends \Frontend
 {
 	public function getMember()
 	{

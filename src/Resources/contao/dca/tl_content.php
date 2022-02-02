@@ -35,12 +35,12 @@
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'forum_use_fixed_forum';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'forum_use_fixed_thread';
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_forum_list'] = '{type_legend},name,headline,type;{forum_settings},forum_use_fixed_forum,';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_thread_reader'] = '{type_legend},name,headline,type;{forum_settings},forum_use_fixed_thread';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_thread_editor'] = '{type_legend},name,headline,type';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_post_editor'] = '{type_legend},name,headline,type';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_user_panel'] = '{type_legend},name,headline,type';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_moderator_panel'] = '{type_legend},name,headline,type';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_forum_list'] = '{type_legend},type,headline;{forum_settings},forum_use_fixed_forum,';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_thread_reader'] = '{type_legend},type,headline;{forum_settings},forum_use_fixed_thread';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_thread_editor'] = '{type_legend},type,headline';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_post_editor'] = '{type_legend},type,headline';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_user_panel'] = '{type_legend},type,headline';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['forum_moderator_panel'] = '{type_legend},type,headline';
 
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['forum_use_fixed_forum'] = 'forum_fixed_forum';
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['forum_use_fixed_thread'] = 'forum_fixed_thread';
@@ -107,7 +107,7 @@ class tl_content_forum extends Backend
 {
 	public function getForums()
 	{
-		$objForums = $this->Database->prepare("SELECT id, name FROM tl_forum_forums")->execute();
+		$objForums = $this->Database->prepare("SELECT * FROM tl_forum_forums")->execute();
 
 		if ($objForums->numRows < 1)
 		{
@@ -126,7 +126,7 @@ class tl_content_forum extends Backend
 	
 	public function getThreads()
 	{
-		$objThreads = $this->Database->prepare("SELECT id, name FROM tl_forum_threads")->execute();
+		$objThreads = $this->Database->prepare("SELECT * FROM tl_forum_threads")->execute();
 
 		if ($objThreads->numRows < 1)
 		{

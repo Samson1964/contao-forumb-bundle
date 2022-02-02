@@ -28,31 +28,54 @@
  * @filesource
  */
 
+if(TL_MODE == 'BE') 
+{
+	$GLOBALS['TL_CSS'][] = 'bundles/contaoforumb/backend.css';
+}
+
 
 /**
  * -------------------------------------------------------------------------
  * BACK END MODULES
  * -------------------------------------------------------------------------
  */
- $GLOBALS['BE_MOD']['forum'] = array
- (
-   'tl_forum_forums' => array
-	 (
-	    'tables' => array('tl_forum_forums')
-	 ),
+$GLOBALS['BE_MOD']['forum'] = array
+(
+	'tl_forum_forums' => array
+	(
+		'tables'                  => array('tl_forum_forums')
+	),
 	'tl_forum_threads' => array
-	 (
-	    'tables' => array('tl_forum_threads','tl_forum_posts')
-	 ),
+	(
+		'tables'                  => array('tl_forum_threads','tl_forum_posts')
+	),
 	'tl_forum_user_settings' => array
-	 (
-	    'tables' => array('tl_forum_user_settings')
-	 ),
+	(
+		'tables'                  => array('tl_forum_user_settings')
+	),
 	'tl_forum_settings' => array
-	 (
-	    'tables' => array('tl_forum_settings')
-	 )
- );
+	(
+		'tables'                  => array('tl_forum_settings')
+	),
+	'tl_forum_forum_tracker' => array
+	(
+		'tables'                  => array('tl_forum_forum_tracker'),
+		'hideInNavigation'        => true,
+		'disablePermissionChecks' => true
+	),
+	'tl_forum_thread_tracker' => array
+	(
+		'tables'                  => array('tl_forum_thread_tracker'),
+		'hideInNavigation'        => true,
+		'disablePermissionChecks' => true
+	),
+	'tl_forum_moderator_log' => array
+	(
+		'tables'                  => array('tl_forum_moderator_log'),
+		'hideInNavigation'        => true,
+		'disablePermissionChecks' => true
+	),
+);
 
 /**
  * -------------------------------------------------------------------------
